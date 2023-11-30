@@ -1,0 +1,155 @@
+:root {
+    --gap: 30px;
+}
+
+@font-face {
+    font-family: japan;
+    src: url(/fonts/OsakaJapan-w1YeP.ttf);
+}
+
+@keyframes title {
+    0% {
+        rotate: 3deg;
+        color: #8c8;
+        font-size: 4vw;
+    }
+    50% {
+        rotate: -3deg;
+        color: cyan;
+        font-size: 4.6vw;
+    }
+    100% {
+        rotate: 3deg;
+        color: #8c8;
+        font-size: 4vw;
+    }
+}
+
+body {
+    overflow: hidden;
+    background-color: #121212;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    transition: scale 0.5s;
+    transition: background-color 0.7s;
+    transition-timing-function: ease;
+}
+
+header {
+    position: relative;
+    overflow: hidden;
+    height: 20vh;
+    width: 100vw;
+    box-shadow:;
+}
+
+header .bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url(/img/japan.jpeg);
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+header .center {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+header h1 {
+    color: #C6B0BC;
+    font-family: japan;
+    animation: title 3s infinite;
+}
+
+.questions {
+    display: grid;
+    height: calc(80vh - calc(var(--gap)));
+    width: calc(100vw - calc(var(--gap)));
+    padding: calc(var(--gap) / 2);
+    grid-auto-rows: calc(1fr - calc(var(--gap) / 2));
+    grid-auto-columns: calc(1fr - calc(var(--gap) / 2));
+    overflow-y: visible;
+    overflow-x: visible;
+}
+
+.questions .q {
+    position: relative;
+    padding: calc(var(--gap) / 2);
+}
+
+.questions * {
+    transition: all 0.7s;
+    transition-timing-function: ease;
+}
+
+.questions .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.questions .text {
+    width: 80%;
+    height: 80%;
+    color: #C6B0BC;
+}
+
+.questions .text .question {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 8mm;
+}
+.questions .text .ans {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 10mm;
+}
+
+.q .bg {
+    position: absolute;
+    width: calc(100% - calc(var(--gap)));
+    height: calc(100% - calc(var(--gap)));
+    border-radius: 7mm;
+    background-color: #2020B4;
+    filter: blur(12px);
+    z-index: -1;
+}
+
+
+.questions .q:hover .center {
+    scale: 1.07;
+    margin-top: 2mm;
+}
+
+.questions .q:hover .bg {
+    scale: 1.005;
+    background-color: #7C2629;
+    filter: blur(5px);
+    border-radius: 5mm;
+}
+
+.questions:has(.q:hover) .q:not(:hover) {
+
+}
+
+.q1 {
+    grid-area: 1 / 1 / 5 / 3;
+}
+
+.q2 {
+    grid-area: 1 / 3 / 3 / 6;
+}
+
+.q3 {
+    grid-area: 3 / 3 / 5 / 6;
+}
