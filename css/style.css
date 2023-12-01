@@ -41,9 +41,8 @@ body {
 header {
     position: relative;
     overflow: hidden;
-    height: 20vh;
+    height: 11vw;
     width: 100vw;
-    box-shadow:;
 }
 
 header .bg {
@@ -112,7 +111,11 @@ header h1 {
 }
 .questions .text .ans {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 10mm;
+    line-height: 8mm;
+}
+
+.questions .q1 .ans {
+    line-height: 10mm; 
 }
 
 .q .bg {
@@ -136,10 +139,6 @@ header h1 {
     background-color: #7C2629;
     filter: blur(5px);
     border-radius: 5mm;
-}
-
-.questions:has(.q:hover) .q:not(:hover) {
-
 }
 
 .q1 {
